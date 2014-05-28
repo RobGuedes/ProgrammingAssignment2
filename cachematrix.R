@@ -1,13 +1,16 @@
 makeCacheMatrix <- function(x = matrix()) {
-        #initialize. sets m to null
         m <- NULL
+        
+        #function to set the inverse of a matrix
         set <- function(y) {
                 x <<- y
                 m <<- NULL
         }
+        
+        #function to get the inverse of the given matrix
         get <- function() x
-        setinverse <- function(solve) m <<- solve
-        getinverse <- function() m
+        setinverse <- function(solve) m <<- solve   #procedure that actually inverts the matrix
+        getinverse <- function() m                  #procedure that will return the inverted matrix
         list(set = set, get = get,
              setinverse = setinverse,
              getinverse = getinverse)
